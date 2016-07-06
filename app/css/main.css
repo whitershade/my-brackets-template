@@ -23,21 +23,9 @@ body textarea:required:valid {
   color: green; }
 
 body {
+  padding: 0;
   margin: 0;
-  color: white;
-  box-shadow: 0 0 0 2 black;
   font-size: 16px; }
-
-.main-header a {
-  font-family: Arial;
-  font-style: italic;
-  font-size: 14px;
-  line-height: 18px;
-  font-weight: bold;
-  border-top: 1px;
-  border-bottom: 2px;
-  border-left: 1px;
-  border-right: 5px; }
 
 /*==========  Desktop First Method  ==========*/
 /* Large Devices, Wide Screens */

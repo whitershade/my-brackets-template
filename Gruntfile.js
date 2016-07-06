@@ -7,7 +7,7 @@
     require('jit-grunt')(grunt, {
       useminPrepare: 'grunt-usemin'
     });
-    
+
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
 
@@ -15,11 +15,31 @@
     grunt.initConfig({
       pkg: grunt.file.readJSON('package.json'),
 
+      sass: {
+        options: {
+          sourceMap: true
+        },
+        dist: {
+          files: {
+            'app/css/main.css': 'scss/main.scss'
+          }
+        }
+      },
+
+      watch: {
+        css: {
+          files: 'scss/main.scss',
+          tasks: ['sass']
+        },
+      },
+      
+      //clean dist
       clean: {
         build: {
           src: ['dist/']
         }
       },
+      
       jshint: {
         all: {
           src: [
@@ -126,7 +146,8 @@
       }
     });
     // Указываем, какие задачи выполняются, когда мы вводим «grunt» в терминале
-    grunt.registerTask('default', ['clean', 'jshint', 'useminPrepare',
+    grunt.registerTask('scss', ['watch']);
+    grunt.registerTask('dist', ['clean', 'jshint', 'useminPrepare',
     'concat', 'purifycss', 'cssmin', 'uglify', 'copy', 'usemin', 'autoprefixer', 'imagemin', 'revizor']);
   };
 }());

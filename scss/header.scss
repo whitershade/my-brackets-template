@@ -1,10 +1,10 @@
-@import "bourbon";
+@import "../bower_components/bourbon/app/assets/stylesheets/_bourbon.scss";
 @import "fonts";
 @import "vars";
 body,
 html {
   margin: 0;
-  padding: 0;
+  padding: 0; 
 }
 
 .clearfix:after {
